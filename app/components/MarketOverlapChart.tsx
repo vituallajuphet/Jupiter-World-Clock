@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { isSummerTime } from './utils';
-import moment from 'moment-timezone';
 
 const MarketOverlapChart = () => {
     const [isClient, setIsClient] = useState(false);
@@ -78,7 +77,7 @@ const MarketOverlapChart = () => {
             </div>
 
             {/* Display each market's session */}
-            {sessions.map(({ market, start, end, color, timezone }) => (
+            {sessions.map(({ market, start, end, color }) => (
                 <div key={market} className="flex items-center space-x-2">
                     {/* Market Label */}
                     <div className="w-32 text-right font-semibold pr-2 text-xs">{market}</div>
