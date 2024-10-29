@@ -26,8 +26,8 @@ const MarketOverlapChart = () => {
         {
             market: "Tokyo, Japan",
             timezone: "Asia/Tokyo",
-            start: 8,
-            end: 17,
+            start: 7,
+            end: 16,
             color: 'bg-green-500'
         },      // Tokyo: 8 AM - 5 PM (year-round)
         {
@@ -85,15 +85,14 @@ const MarketOverlapChart = () => {
                     {/* Time Slots */}
                     <div className="flex">
                         {phtHours.map(hour => {
-                            const isSameHour = hour === moment().tz(timezone).hour()
-                            console.log("isSameHour", isSameHour)
+                            // const isSameHour = hour === moment().tz(timezone).hour()
+                            // console.log("isSameHour", isSameHour)
                             const theColor = isWithinTradingHours(hour, start, end) ? color : 'bg-gray-200'
                             return (
                                 <div
                                     key={hour}
                                     className={`h-10 ${theColor} border border-gray-300 w-12 relative flex items-center justify-center`}
                                 >
-                                    {isSameHour ? <span className="text-xs bg-slate-800 w-4 h-4 rounded-full block"></span> : null}
                                 </div>
                             )
                         })}
